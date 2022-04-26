@@ -1,0 +1,48 @@
+.synthContainer{
+	width: 1200px;
+	height: 600px;
+	background-color:#666;
+	border: 1px solid black;
+	display: grid;
+	grid-template-rows: auto 1fr 1fr 1fr 1fr;
+}
+
+.synthHeader, .osc, .mixer{
+	border: 1px solid #777;
+}
+
+.synthHeader{
+	display: grid;
+	grid-template-columns: 5% 15% 30% 30% 10% 10%;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.synthHeader > div:not(:last-child){
+    border-right: dashed 1px #fff;
+}
+
+.osc {
+	display: grid;
+	grid-template-columns: 5% 15% 30% 30% 10% 10%;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.osc > div:not(:last-child){
+    border-right: dashed 1px #ccc;
+}
+
+.mixer{
+
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* Chromium */
+    width: 8px;
+    padding: 0 5px;
+}
