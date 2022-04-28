@@ -1,3 +1,3 @@
 # andthefox.github.io
 
-https://andthefox.github.io/jsOSC/
+https://andthefox.github.io/jsOsc/
