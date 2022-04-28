@@ -15,7 +15,7 @@ export function OscillatorI(waveform, attack, decay, sustain, release, enabled) 
         'decay': decay,
         'sustain': sustain,
         'release': release,
-        'monotransition': 0.01
+        'monotransition': 0.001
     }
 }
 

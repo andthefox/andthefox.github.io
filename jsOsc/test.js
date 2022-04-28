@@ -203,6 +203,80 @@ import {OscillatorI} from './modules/oscillator.js';
         element.addEventListener('input', oscRelease, false);
     }
 
+    //KEYBOARD
+    const keyValues = {
+        //C3
+        'KeyZ': 48,
+        'KeyS': 49,
+        'KeyX': 50,
+        'KeyD': 51,
+        'KeyC': 52,
+        'KeyV': 53,
+        'KeyG': 54,
+        'KeyB': 55,
+        'KeyH': 56,
+        'KeyN': 57,
+        'KeyJ': 58,
+        'KeyM': 59,
+        'Comma': 60,
+        'keyL': 61,
+        'Period': 62,
+        'Semicolon': 63,
+        'Slash': 64,
+
+        //C4
+        'KeyQ': 60,
+        'Digit2': 61,
+        'KeyW': 62,
+        'Digit3': 63,
+        'KeyE': 64,
+        'KeyR': 65,
+        'Digit5': 66,
+        'KeyT': 67,
+        'Digit6': 68,
+        'KeyY': 69,
+        'Digit7': 70,
+        'KeyU': 71,
+        'KeyI': 72,
+        'Digit9': 73,
+        'KeyO': 74,
+        'Digit0': 75,
+        'KeyP': 76,
+        'BracketLeft': 77,
+        'BracketRight': 78
+    };
+
+    addEvent(document, "keydown", function (e) {
+        e = e || window.event;
+        let key = e.code;
+        let pitch = keyValues[key];
+        console.log('keydown', key, pitch);
+
+        if (e.repeat === false && pitch != undefined)
+        {
+            let velocity = 64;
+            midNoteOn(pitch, velocity);
+        }
+    });
+
+    addEvent(document, "keyup", function (e) {
+        console.log('keyup');
+        e = e || window.event;
+        let key = e.code;
+        let pitch = keyValues[key];
+        midiNoteOff(pitch);
+    });
+    
+    function addEvent(element, eventName, callback) {
+        if (element.addEventListener) {
+            element.addEventListener(eventName, callback, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + eventName, callback);
+        } else {
+            element["on" + eventName] = callback;
+        }
+    }
+
     //MIDI
 
     function Midi(){
