@@ -90,7 +90,7 @@ const address = document.getElementById("address");
 btn.addEventListener('click', () => {
     addr = address.value;
 
-    socketworker = new WebSocketWorker(addr, port, false);
+    socketworker = new WebSocketWorker(addr, port, true);
     socketworker.socket.binaryType = "arraybuffer";
 
     navigator.mediaDevices
