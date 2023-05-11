@@ -75,7 +75,7 @@ class WebSocketWorker {
 }
 
 var addr = 'localhost'; //'localhost';
-const port = '8001';
+const port = '8080';
 const timeslice = 200;
 
 var audiobuffer = [];
